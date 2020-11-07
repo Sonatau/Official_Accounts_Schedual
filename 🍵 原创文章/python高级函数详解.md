@@ -1,5 +1,3 @@
-### python高阶函数详解
-
 本文结合各种实际的例子详细讲解了`Python`5个内建高阶函数的使用，能够帮助理解Python的数据结构和提高数据处理的效率，这5个函数分别是：
 
 - map
@@ -10,15 +8,9 @@
 
 ![](https://tva1.sinaimg.cn/large/0081Kckwgy1gk0js8cz74j31ra0u01kx.jpg)
 
-<!--MORE-->
+## 一、map
 
-### 文章目录
-
-![](https://tva1.sinaimg.cn/large/0081Kckwgy1gk0jwpc42dj30ds0pytau.jpg)
-
-### map
-
-#### 语法
+### 1.1 语法
 
 `map`函数的基本语法是`map(func, seq)`，其含义指的是：对后面可迭代序列中的每个元素执行前面的函数`func`的功能，最终获取到一个新的序列。注意：
 
@@ -34,7 +26,7 @@ help(map)  # 查看帮助信息
 
 
 
-#### demo
+### 1.2 demo
 
 通过举例说明`map`函数的使用方法
 
@@ -52,11 +44,9 @@ help(map)  # 查看帮助信息
 
 ![](https://tva1.sinaimg.cn/large/0081Kckwgy1gk0k6wz0gkj30zs0hc41h.jpg)
 
+## 二、reduce
 
-
-### reduce
-
-#### 语法
+### 2.1 语法
 
 `reduce`函数的定义：
 
@@ -71,7 +61,7 @@ reduce(function, sequence [, initial] ) -> value
 
 
 
-#### 使用
+### 2.2 使用
 
 `Python3`中已将`reduce`函数移到`functools`模块中，需要先进行导入：
 
@@ -95,7 +85,7 @@ help(reduce)  # 查看帮助文档
 
 
 
-#### demo
+### 2.3 demo
 
 1. 使用自定义函数
 
@@ -139,9 +129,9 @@ help(reduce)  # 查看帮助文档
 
 
 
-### filter
+## 三、filter
 
-#### 语法
+### 3.1 语法
 
 `filter()`函数用于过滤序列，过滤掉不符合条件的那些元素，返回符合条件的元素组成新列表。
 
@@ -153,7 +143,7 @@ help(reduce)  # 查看帮助文档
 filter(function, iterable)  # 前者为函数，后者为待执行的序列
 ```
 
-#### demo
+### 3.2 demo
 
 
 ```python
@@ -184,15 +174,15 @@ help(filter)  # 帮助文档
 
 
 
-### sorted
+## 四、sorted
 
-#### 语法
+### 4.1 语法
 
 ```python
 sorted(iterable, key=None, reverse=False)  
 ```
 
-#### 3个参数
+### 4.2 3个参数
 
 `sorted()`接受3个参数，**返回的是一个排序后的列表**
 
@@ -202,7 +192,7 @@ sorted(iterable, key=None, reverse=False)
 
 - 接受一个回调函数`key=None`，回调函数只能有一个参数，根据函数的返回值进行排序
 
-#### demo
+### 4.3 demo
 
 
 ```python
@@ -221,7 +211,7 @@ help(sorted)  # 帮助文档
 
 ![](https://tva1.sinaimg.cn/large/0081Kckwgy1gk0muwcrfmj31560hgwhg.jpg)
 
-#### 结果反转
+### 4.4 结果反转
 
 结果反转的意义就是**将结果降序排列**，因为原本默认是升序的，使用的是`reverse=True`
 
@@ -229,7 +219,7 @@ help(sorted)  # 帮助文档
 
 
 
-#### 理解key
+### 4.5 理解key
 
 `key`参数的作用是我们自定义一个函数，然后通过将序列中的元素作用于函数之后再进行排序
 
@@ -243,7 +233,7 @@ help(sorted)  # 帮助文档
 
 
 
-#### 对比sort()
+### 4.6 对比sort()
 
 sort()方法只能**对原列表list进行排序**，参数和sorted是相同的
 
@@ -251,11 +241,11 @@ sort()方法只能**对原列表list进行排序**，参数和sorted是相同的
 
 ![](https://tva1.sinaimg.cn/large/0081Kckwgy1gk0n0re93hj30sw0hgq5j.jpg)
 
-### zip
+## 五、zip
 
 `zip()`是`Python`中一个非常重要的方法，能够快速的实现很多功能。
 
-#### 语法
+### 5.1 语法
 
 ```python
 zip([iterable,...])  # iterable是一个或者多个可迭代器
@@ -273,7 +263,7 @@ help(zip)  # 查看文档
 
 
 
-#### zip接受一个序列
+### 5.2 zip接受一个序列
 
 `zip`中可以接受**列表、元组、字符串**等形式
 
@@ -287,7 +277,7 @@ help(zip)  # 查看文档
 
 
 
-#### zip接受多个序列
+### 5.3 zip接受多个序列
 
 
 
@@ -299,13 +289,13 @@ help(zip)  # 查看文档
 
 
 
-#### 处理长度不同
+### 5.4 处理长度不同
 
 当多个序列同时存在，**取长度最小的那个序列的长度**
 
 ![](https://tva1.sinaimg.cn/large/0081Kckwgy1gk0neeakshj31260iogoc.jpg)
 
-#### zip(*iterables)
+### 5.5 zip(*iterables)
 
 我们一般认为该方法是`zip`的反过程，是一个`unzip`的过程，举例说明其使用：
 
@@ -313,7 +303,7 @@ help(zip)  # 查看文档
 
 
 
-#### 复杂例子
+### 5.6 复杂例子
 
 下面看一个更为复杂的例子
 
@@ -329,7 +319,7 @@ help(zip)  # 查看文档
 
 
 
-#### zip运用
+### 5.7 zip运用
 
 下面通过`zip`的实际例子来说明它的应用：
 
